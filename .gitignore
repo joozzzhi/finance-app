@@ -1,0 +1,22 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.dll
+*.exe
+*.pdb
+
+## Visual Studio
+.vs/
+*.vsidx
+*.sln.docstates
+
+## NuGet
+packages/
+*.nupkg
+
+## OS
+.DS_Store
+Thumbs.db
