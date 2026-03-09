@@ -41,8 +41,8 @@ namespace FinanceApp.Windows
             var totalExpenses = db.Expenses.Count();
             TotalTransactionsText.Text = (totalIncomes + totalExpenses).ToString();
 
-            var allIncomes = db.Incomes.Sum(i => (decimal?)i.IncomeAmount) ?? 0;
-            var allExpenses = db.Expenses.Sum(e => (decimal?)e.ExpenseAmount) ?? 0;
+            var allIncomes = db.Incomes.ToList().Sum(i => i.IncomeAmount);
+            var allExpenses = db.Expenses.ToList().Sum(e => e.ExpenseAmount);
             AllIncomesText.Text = $"{allIncomes:N2} ₽";
             AllExpensesText.Text = $"{allExpenses:N2} ₽";
         }

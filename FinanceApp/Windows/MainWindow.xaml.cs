@@ -240,11 +240,13 @@ namespace FinanceApp.Windows
 
             var totalIncome = db.Incomes
                 .Where(i => i.UserID == _currentUser.UserID)
-                .Sum(i => (decimal?)i.IncomeAmount) ?? 0;
+                .ToList()
+                .Sum(i => i.IncomeAmount);
 
             var totalExpense = db.Expenses
                 .Where(e => e.UserID == _currentUser.UserID)
-                .Sum(e => (decimal?)e.ExpenseAmount) ?? 0;
+                .ToList()
+                .Sum(e => e.ExpenseAmount);
 
             var savings = totalIncome - totalExpense;
 
