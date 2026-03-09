@@ -13,8 +13,9 @@ namespace FinanceApp.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(
-                @"Server=(localdb)\MSSQLLocalDB;Database=FinanceDB;Trusted_Connection=True;");
+            var dbPath = System.IO.Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory, "FinanceDB.db");
+            optionsBuilder.UseSqlite($"Data Source={dbPath}");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
