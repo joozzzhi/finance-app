@@ -261,26 +261,26 @@
                                 <Border Background="White" CornerRadius="8"
                                         Margin="5" Padding="15" Width="250">
                                     <StackPanel>
-                                        <TextBlock Text="{Binding TargetName}"
+                                        <TextBlock Text="{Binding TargetName, Mode=OneWay}"
                                                    FontSize="16" FontWeight="SemiBold"
                                                    Foreground="#333" Margin="0,0,0,5"/>
                                         <TextBlock Foreground="#888" FontSize="12" Margin="0,0,0,8">
                                             <Run Text="Цель: "/>
-                                            <Run Text="{Binding TargetAmount, StringFormat={}{0:N2} ₽}"/>
+                                            <Run Text="{Binding TargetAmount, StringFormat={}{0:N2} ₽, Mode=OneWay}"/>
                                         </TextBlock>
-                                        <ProgressBar Value="{Binding Progress}"
+                                        <ProgressBar Value="{Binding Progress, Mode=OneWay}"
                                                      Maximum="100" Height="20"
                                                      Foreground="#4CAF50"
                                                      Background="#E0E0E0"/>
                                         <TextBlock Foreground="#4CAF50" FontSize="12"
                                                    HorizontalAlignment="Center"
                                                    Margin="0,5,0,0">
-                                            <Run Text="{Binding Progress, StringFormat={}{0:N0}}"/>
+                                            <Run Text="{Binding Progress, StringFormat={}{0:N0}, Mode=OneWay}"/>
                                             <Run Text="%"/>
                                         </TextBlock>
                                         <TextBlock Foreground="#888" FontSize="11" Margin="0,5,0,0">
                                             <Run Text="Срок: "/>
-                                            <Run Text="{Binding EndDate, StringFormat=dd.MM.yyyy}"/>
+                                            <Run Text="{Binding EndDate, StringFormat=dd.MM.yyyy, Mode=OneWay}"/>
                                         </TextBlock>
                                     </StackPanel>
                                 </Border>
